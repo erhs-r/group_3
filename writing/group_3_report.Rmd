@@ -50,7 +50,7 @@ outbreak_graph <- outbreak_dates %>%
 outbreak_graph
 ```
 
-### Chart 3
+### Outbreak Gauge
 
 
 
