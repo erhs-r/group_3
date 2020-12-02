@@ -32,7 +32,7 @@ datatable(outbreak_list, colnames = c("Location", "Status", "Company Type", "Sta
 Column {data-width=400}
 -------------------------------------
   
-### Chart 2
+### Covid-19 Outbreaks by Month
 ```{r}
 outbreak_dates <- outbreak_list %>% 
   mutate(Date.Outbreak.Determined = mdy(Date.Outbreak.Determined)) %>%  
@@ -55,7 +55,7 @@ outbreak_graph
 
 
 
-### Articles per Day
+### Confirmed Cases
 
 ```{r}
 case_data <- read_csv("larimer_covid_cases.csv") %>% 
@@ -67,7 +67,7 @@ valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-group")
 
 ```
 
-### Comments per Day
+### Confirmed Deaths
 
 ```{r}
 death_data <- read_csv("larimer_covid_deaths.csv")
