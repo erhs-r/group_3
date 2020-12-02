@@ -21,7 +21,7 @@ library(plotly)
 library(DT)
 library(ggthemes)
 library(viridis)
-outbreak_list <- read.csv(file = "https://larimer-county-data-lake.s3-us-west-2.amazonaws.com/Public/covid/covid_outbreak.csv?t=1606767494752" )
+outbreak_list <- read.csv(file = "larimer_covid_outbreaks.csv" )
 outbreak_list <- outbreak_list %>%
   select(Facility, Status, Type, Date.Outbreak.Determined)
 
@@ -35,7 +35,8 @@ Column {data-width=400}
 ### Chart 2
 ```{r}
 outbreak_dates <- outbreak_list %>% 
-  mutate(Date.Outbreak.Determined = ymd(Date.Outbreak.Determined)) %>% mutate(month(Date.Outbreak.Determined, label = TRUE)) %>% 
+  mutate(Date.Outbreak.Determined = mdy(Date.Outbreak.Determined)) %>%  
+  mutate(month(Date.Outbreak.Determined, label = TRUE)) %>% 
   rename(start_month = `month(Date.Outbreak.Determined, label = TRUE)`)
 
 outbreak_graph <- outbreak_dates %>% 
@@ -55,7 +56,7 @@ outbreak_graph
 ### Articles per Day
 
 ```{r}
-case_data <- read_csv("https://speedtest.larimer.org/covid/index.php?t=1606853343384&gid=1219297132&csv=cases") %>% 
+case_data <- read_csv("larimer_covid_cases.csv") %>% 
   group_by(Type) %>% 
   count() %>% 
   filter(Type == "Confirmed")
@@ -66,7 +67,7 @@ valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-virus")
 ### Comments per Day
 
 ```{r}
-death_data <- read_csv("https://larimer-county-data-lake.s3-us-west-2.amazonaws.com/Public/covid/covid_deaths.csv?t=1606853343384")
+death_data <- read_csv("larimer_covid_deaths.csv")
 
 death_data <- death_data %>% 
   group_by(case_status) %>% 
