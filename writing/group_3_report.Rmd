@@ -1,6 +1,6 @@
 ---
 title: "Group 3 Final Project"
-author: "Natalie Collins"
+author: "Natalie Collins, Peter Kessinger, MacKenzie Hennes, & Audrey Dickinson"
 date: "11/16/2020"
 output: flexdashboard::flex_dashboard
 ---
@@ -77,5 +77,5 @@ death_data <- death_data %>%
   count() %>% 
   filter(case_status == "Confirmed")
 
-valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "")
+valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "fa-medkit")
 ```
