@@ -61,7 +61,8 @@ case_data <- read_csv("larimer_covid_cases.csv") %>%
   count() %>% 
   filter(Type == "Confirmed")
 
-valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-virus")
+valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-pencil")
+
 ```
 
 ### Comments per Day
@@ -74,5 +75,5 @@ death_data <- death_data %>%
   count() %>% 
   filter(case_status == "Confirmed")
 
-valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "fa-virus")
+valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "")
 ```
