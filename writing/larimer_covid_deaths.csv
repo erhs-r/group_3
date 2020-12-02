@@ -1,0 +1,75 @@
+death_id,death_date,age,gender,city,case_status,count
+a0U5w00000edbfjEAA,3/9/2020,91,Female,Loveland,Probable,1
+a0U5w00000edbfiEAA,3/13/2020,95,Female,Loveland,Probable,2
+a0U5w00000edbfOEAQ,3/15/2020,90,Female,Loveland,Probable,3
+a0U5w00000edbfMEAQ,3/25/2020,74,Female,Loveland,Confirmed,4
+a0U5w00000edbfJEAQ,3/25/2020,87,Female,Fort Collins,Confirmed,5
+a0U5w00000edbfNEAQ,3/29/2020,95,Female,Loveland,Confirmed,6
+a0U5w00000edbfSEAQ,3/29/2020,79,Female,Fort Collins,Confirmed,7
+a0U5w00000edbfLEAQ,3/30/2020,58,Male,Fort Collins,Confirmed,8
+a0U5w00000edbfaEAA,3/31/2020,46,Male,Fort Collins,Probable,9
+a0U5w00000edbfKEAQ,4/1/2020,93,Female,Loveland,Confirmed,10
+a0U5w00000edbfQEAQ,4/3/2020,86,Female,Loveland,Confirmed,11
+a0U5w00000edbfgEAA,4/5/2020,85,Male,Loveland,Probable,12
+a0U5w00000edbfkEAA,4/8/2020,84,Male,Loveland,Probable,13
+a0U5w00000edbfbEAA,4/9/2020,58,Male,Drake,Probable,14
+a0U5w00000edbfTEAQ,4/9/2020,101,Female,Loveland,Confirmed,15
+a0U5w00000edbfcEAA,4/14/2020,92,Female,Loveland,Probable,16
+a0U5w00000edbfUEAQ,4/14/2020,80,Male,Loveland,Confirmed,17
+a0U5w00000edbfPEAQ,4/15/2020,89,Female,Loveland,Confirmed,18
+a0U5w00000edbfVEAQ,4/16/2020,70,Male,Fort Collins,Confirmed,19
+a0U5w00000edbfXEAQ,4/22/2020,67,Male,Fort Collins,Confirmed,20
+a0U5w00000edbfZEAQ,4/25/2020,85,Male,Estes Park,Confirmed,21
+a0U5w00000edbfYEAQ,4/30/2020,91,Male,Fort Collins,Confirmed,22
+a0U5w00000edbfdEAA,5/5/2020,84,Female,Estes Park,Confirmed,23
+a0U5w00000edbfhEAA,5/5/2020,86,Female,Loveland,Probable,24
+a0U5w00000edbfeEAA,5/24/2020,90,Male,Fort Collins,Confirmed,25
+a0U5w00000edbffEAA,5/25/2020,56,Male,Loveland,Confirmed,26
+a0U5w00000eddQDEAY,6/13/2020,57,Male,Loveland,Confirmed,27
+a0U5w00000edfvhEAA,6/20/2020,68,Male,Loveland,Confirmed,28
+a0U5w00000edh1YEAQ,7/7/2020,83,Male,Loveland,Confirmed,29
+a0U5w00000ediRUEAY,7/15/2020,69,Male,Fort Collins,Confirmed,30
+a0U5w00000edibKEAQ,7/16/2020,82,Female,Loveland,Confirmed,31
+a0U5w00000edllbEAA,7/25/2020,92,Male,Loveland,Confirmed,32
+a0U5w00000edmYNEAY,7/27/2020,72,Male,Estes Park,Confirmed,33
+a0U5w00000edm8iEAA,7/29/2020,79,Male,Loveland,Confirmed,34
+a0U5w00000f0zDTEAY,8/5/2020,86,Female,Loveland,Confirmed,35
+a0U5w00000f0zDSEAY,8/9/2020,85,Male,Loveland,Confirmed,36
+a0U5w00000f1CqdEAE,8/12/2020,89,Male,Loveland,Confirmed,37
+a0U5w00000f1CqeEAE,8/21/2020,75,Male,Fort Collins,Confirmed,38
+a0U5w00000f1CqfEAE,8/22/2020,84,Male,Fort Collins,Confirmed,39
+a0U5w00000f1CqgEAE,8/25/2020,73,Female,Fort Collins,Confirmed,40
+a0U5w00000f1CqiEAE,8/27/2020,72,Female,Fort Collins,Confirmed,41
+a0U5w00000f1CqhEAE,8/27/2020,93,Female,Fort Collins,Confirmed,42
+a0U5w00000f1CwhEAE,8/30/2020,70,Male,Fort Collins,Confirmed,43
+a0U5w00000f1G1KEAU,9/1/2020,87,Female,Fort Collins,Confirmed,44
+a0U5w00000f1KyOEAU,9/5/2020,80,Male,Fort Collins,Confirmed,45
+a0U5w00000f1Ih3EAE,9/7/2020,98,Female,Fort Collins,Confirmed,46
+a0U5w00000f1L9FEAU,9/9/2020,92,Female,Fort Collins,Confirmed,47
+a0U5w00000f1LMYEA2,9/10/2020,48,Male,Fort Collins,Confirmed,48
+a0U5w00000f1LEAEA2,9/11/2020,74,Male,Fort Collins,Confirmed,49
+a0U5w00000f1LeEEAU,9/19/2020,85,Male,Loveland,Probable,50
+a0U5w00000f1MQREA2,9/21/2020,94,Female,Fort Collins,Confirmed,51
+a0U5w00000f1LoKEAU,9/21/2020,78,Female,Fort Collins,Probable,52
+a0U5w00000f1RBhEAM,9/22/2020,71,Male,Estes Park,Confirmed,53
+a0U5w00000f1MxCEAU,9/26/2020,99,Female,Fort Collins,Confirmed,54
+a0U5w00000f1NJgEAM,9/29/2020,87,Female,Fort Collins,Confirmed,55
+a0U5w00000f1RZpEAM,10/13/2020,88,Male,Loveland,Confirmed,56
+a0U5w00000f1RZqEAM,10/23/2020,80,Female,Estes Park,Confirmed,57
+a0U5w00000f1So1EAE,10/30/2020,98,Female,Estes Park,Confirmed,58
+a0U5w00000f1So2EAE,11/1/2020,60,Female,Fort Collins,Confirmed,59
+a0U5w00000f1T55EAE,11/1/2020,86,Female,Estes Park,Confirmed,60
+a0U5w00000f1T8dEAE,11/4/2020,96,Male,Fort Collins,Confirmed,61
+a0U5w00000f1THBEA2,11/6/2020,69,Male,Fort Collins,Confirmed,62
+a0U5w00000f1U7DEAU,11/7/2020,86,Female,Loveland,Probable,63
+a0U5w00000f1VTZEA2,11/9/2020,84,Male,Fort Collins,Confirmed,64
+a0U5w00000f1UNAEA2,11/16/2020,84,Male,Fort Collins,Confirmed,65
+a0U5w00000f1VA7EAM,11/17/2020,95,Female,Estes Park,Confirmed,66
+a0U5w00000f1VA4EAM,11/17/2020,81,Male,Loveland,Confirmed,67
+a0U5w00000f1UNBEA2,11/19/2020,91,Male,Livermore,Confirmed,68
+a0U5w00000f1VA8EAM,11/19/2020,97,Female,Loveland,Confirmed,69
+a0U5w00000f1UzkEAE,11/20/2020,97,Female,Fort Collins,Confirmed,70
+a0U5w00000f1UrREAU,11/21/2020,81,Male,Fort Collins,Confirmed,71
+a0U5w00000f1VJtEAM,11/22/2020,93,Female,Estes Park,Confirmed,72
+a0U5w00000f1UzlEAE,11/23/2020,74,Female,Wellington,Confirmed,73
+a0U5w00000f1VA5EAM,11/23/2020,73,Male,Johnstown,Confirmed,74
