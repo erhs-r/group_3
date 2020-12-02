@@ -53,6 +53,8 @@ outbreak_graph
 ### Chart 3
 
 
+
+
 ### Articles per Day
 
 ```{r}
@@ -61,7 +63,7 @@ case_data <- read_csv("larimer_covid_cases.csv") %>%
   count() %>% 
   filter(Type == "Confirmed")
 
-valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-pencil")
+valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-group")
 
 ```
 
