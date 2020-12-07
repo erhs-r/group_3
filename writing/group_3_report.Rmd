@@ -2,7 +2,8 @@
 title: "Group 3 Final Project"
 author: "Natalie Collins, Peter Kessinger, MacKenzie Hennes, & Audrey Dickinson"
 date: "11/16/2020"
-output: flexdashboard::flex_dashboard
+output:
+  flexdashboard::flex_dashboard: default
 ---
  Column {data-width=600}
 -------------------------------------
@@ -21,10 +22,10 @@ library(plotly)
 library(DT)
 library(ggthemes)
 library(viridis)
+
 outbreak_list <- read.csv(file = "larimer_covid_outbreaks.csv" )
 outbreak_list <- outbreak_list %>%
   select(Facility, Status, Type, Date.Outbreak.Determined)
-
 
 datatable(outbreak_list, colnames = c("Location", "Status", "Company Type", "Start Outbreak Date"), extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
 ```
@@ -41,8 +42,8 @@ outbreak_dates <- outbreak_list %>%
 
 outbreak_graph <- outbreak_dates %>% 
   ggplot(aes(x = start_month)) +
-  geom_bar() +
-  theme_few()+
+  geom_bar(fill = "blue") +
+  theme_few() +
   labs(x = "Month Outbreak Started", y = "Number of Outbreaks", 
        title = "Community Covid-19 Outbreaks by Month")
   
