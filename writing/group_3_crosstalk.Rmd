@@ -1,0 +1,113 @@
+---
+title: "Group 3 Larimer County Dashboard"
+output:
+   flexdashboard::flex_dashboard:
+   orientation: row
+   social: menu
+   source_code: embed
+   theme: cerulean
+---
+```{r Libraries}
+library(tidyverse)
+library(flexdashboard)
+library(lubridate)
+library(shiny)
+library(jsonlite)
+library(maptools)
+library(leaflet)
+library(plotly)
+library(DT)
+library(ggthemes)
+library(viridis)
+library(crosstalk)
+```
+
+```{r Data}
+outbreak_list <- read.csv(file = "larimer_covid_outbreaks.csv")
+outbreak_list <- outbreak_list %>%
+  select(Facility, Status, Type, Date.Outbreak.Determined, Staff.Cases.Confirmed) %>% 
+  mutate(Staff.Cases.Confirmed = ifelse(!is.na(Staff.Cases.Confirmed), Staff.Cases.Confirmed, 0)) %>% 
+  rename(Location = Facility, Date = Date.Outbreak.Determined,
+         Cases = Staff.Cases.Confirmed)
+```
+
+Column {.sidebar data-width=250}
+-------------------------------------
+### Larimer County Outbreaks
+This is where the text box will go that will describe out data.
+
+Hi this is our data! 
+
+```{r}
+Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
+
+filter_select("Type", "Choose Industry:", Larimer_shared1, ~Type)
+```
+
+Row {data-height=350, data-width=300}
+-------------------------------------
+
+### Industry type and staff confirmed cases
+
+```{r}
+plot_ly(Larimer_shared1, labels = ~Type, values = ~Cases, type = 'pie') %>%
+  highlight("plotly_click")
+```
+
+### Plot graph
+
+```{r}
+plot_ly(Larimer_shared1, x = ~Type, y = ~Cases, color = ~Status) %>%
+  group_by(Type) %>% 
+  add_bars()
+```
+
+Row {data-height=600}
+-------------------------------------
+### Datatable
+
+```{r}
+datatable(Larimer_shared1, extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
+```
+
+### Overall Outbreaks
+```{r}
+outbreak_dates <- outbreak_list %>% 
+  mutate(Date = mdy(Date)) %>%  
+  mutate(month(Date, label = TRUE)) %>% 
+  rename(start_month = `month(Date, label = TRUE)`)
+
+outbreak_graph <- outbreak_dates %>% 
+  ggplot(aes(x = start_month)) +
+  geom_bar() +
+  theme_few()+
+  labs(x = "Month Outbreak Started", y = "Number of Outbreaks", 
+       title = "Community Covid-19 Outbreaks by Month")
+  
+
+outbreak_graph
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
