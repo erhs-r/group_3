@@ -29,7 +29,7 @@ outbreak_list <- outbreak_list %>%
 datatable(outbreak_list, colnames = c("Location", "Status", "Company Type", "Start Outbreak Date"), extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
 ```
 
-Column {data-width=400}
+Column {data-width=400, .tabset}
 -------------------------------------
   
 ### Covid-19 Outbreaks by Month
@@ -51,9 +51,14 @@ outbreak_graph
 ```
 
 ### Outbreak Gauge
+```{r}
+
+```
 
 
 
+row
+-------------------------------------
 
 ### Confirmed Cases
 
