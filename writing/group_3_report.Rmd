@@ -41,7 +41,7 @@ outbreak_dates <- outbreak_list %>%
 
 outbreak_graph <- outbreak_dates %>% 
   ggplot(aes(x = start_month)) +
-  geom_bar() +
+  geom_bar(fill = "darkcyan") +
   theme_few()+
   labs(x = "Month Outbreak Started", y = "Number of Outbreaks", 
        title = "Community Covid-19 Outbreaks by Month")
