@@ -24,7 +24,9 @@ library(viridis)
 outbreak_list <- read.csv(file = "larimer_covid_outbreaks.csv" )
 outbreak_list <- outbreak_list %>%
   select(Facility, Status, Type, Date.Outbreak.Determined)
+Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
 
+filter_select("Type", "Choose Industry:", Larimer_shared1, ~Type)
 
 datatable(outbreak_list, colnames = c("Location", "Status", "Company Type", "Start Outbreak Date"), extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
 ```

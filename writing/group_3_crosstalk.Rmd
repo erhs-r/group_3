@@ -24,6 +24,7 @@ library(crosstalk)
 
 ```{r Data}
 outbreak_list <- read.csv(file = "larimer_covid_outbreaks.csv")
+
 outbreak_list <- outbreak_list %>%
   select(Facility, Status, Type, Date.Outbreak.Determined, Staff.Cases.Confirmed) %>% 
   mutate(Staff.Cases.Confirmed = ifelse(!is.na(Staff.Cases.Confirmed), Staff.Cases.Confirmed, 0)) %>% 
