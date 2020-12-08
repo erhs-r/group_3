@@ -4,6 +4,7 @@ author: "Natalie Collins, Peter Kessinger, MacKenzie Hennes, & Audrey Dickinson"
 date: "11/16/2020"
 output: flexdashboard::flex_dashboard
 ---
+
  Column {data-width=600}
 -------------------------------------
   
@@ -29,7 +30,36 @@ outbreak_list <- outbreak_list %>%
 datatable(outbreak_list, colnames = c("Location", "Status", "Company Type", "Start Outbreak Date"), extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
 ```
 
-Column {data-width=400}
+
+
+### Confirmed Cases
+
+```{r}
+case_data <- read_csv("larimer_covid_cases.csv") %>% 
+  group_by(Type) %>% 
+  count() %>% 
+  filter(Type == "Confirmed")
+
+valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-group")
+```
+
+
+
+### Confirmed Deaths
+```{r}
+death_data <- read_csv("larimer_covid_deaths.csv")
+
+death_data <- death_data %>% 
+  group_by(case_status) %>% 
+  count() %>% 
+  filter(case_status == "Confirmed")
+
+valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "fa-medkit")
+
+```
+
+
+Column {data-width=400, .tabset}
 -------------------------------------
   
 ### Covid-19 Outbreaks by Month
@@ -53,29 +83,9 @@ outbreak_graph
 ### Outbreak Gauge
 
 
-
-
-### Confirmed Cases
-
 ```{r}
-case_data <- read_csv("larimer_covid_cases.csv") %>% 
-  group_by(Type) %>% 
-  count() %>% 
-  filter(Type == "Confirmed")
-
-valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-group")
 
 ```
 
-### Confirmed Deaths
 
-```{r}
-death_data <- read_csv("larimer_covid_deaths.csv")
 
-death_data <- death_data %>% 
-  group_by(case_status) %>% 
-  count() %>% 
-  filter(case_status == "Confirmed")
-
-valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "fa-medkit")
-```
