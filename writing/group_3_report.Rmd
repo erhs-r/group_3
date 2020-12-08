@@ -23,15 +23,17 @@ library(plotly)
 library(DT)
 library(ggthemes)
 library(viridis)
+library(crosstalk)
 
-outbreak_list <- read.csv(file = "larimer_covid_outbreaks.csv" )
+outbreak_list <- read.csv(file = "larimer_covid_outbreaks.csv")
 outbreak_list <- outbreak_list %>%
-  select(Facility, Status, Type, Date.Outbreak.Determined)
+  select(Facility, Status, Type, Date.Outbreak.Determined, Staff.Cases.Confirmed) %>% 
+  mutate(Staff.Cases.Confirmed = ifelse(!is.na(Staff.Cases.Confirmed), Staff.Cases.Confirmed, 0)) %>% 
+  rename(Location = Facility, Date = Date.Outbreak.Determined,
+         Cases = Staff.Cases.Confirmed)
 
 datatable(outbreak_list, colnames = c("Location", "Status", "Company Type", "Start Outbreak Date"), extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
 ```
-
-
 
 ### Confirmed Cases
 
@@ -43,8 +45,6 @@ case_data <- read_csv("larimer_covid_cases.csv") %>%
 
 valueBox(case_data$n ,caption = "Confirmed Cases", icon = "fa-group")
 ```
-
-
 
 ### Confirmed Deaths
 ```{r}
@@ -59,6 +59,20 @@ valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "fa-medkit")
 
 ```
 
+Column {.sidebar data-width=250}
+-------------------------------------
+### Larimer County Outbreaks
+This is where the text box will go that will describe out data.
+
+```{r}
+Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
+Larimer_shared2 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
+
+filter_select("Type", "Choose Industry:", Larimer_shared1, ~Type)
+
+
+```
+
 
 Column {data-width=400, .tabset}
 -------------------------------------
@@ -66,14 +80,14 @@ Column {data-width=400, .tabset}
 ### Covid-19 Outbreaks by Month
 ```{r}
 outbreak_dates <- outbreak_list %>% 
-  mutate(Date.Outbreak.Determined = mdy(Date.Outbreak.Determined)) %>%  
-  mutate(month(Date.Outbreak.Determined, label = TRUE)) %>% 
-  rename(start_month = `month(Date.Outbreak.Determined, label = TRUE)`)
+  mutate(Date = mdy(Date)) %>%  
+  mutate(month(Date, label = TRUE)) %>% 
+  rename(start_month = `month(Date, label = TRUE)`)
 
 outbreak_graph <- outbreak_dates %>% 
   ggplot(aes(x = start_month)) +
-  geom_bar(fill = "darkcyan") +
-  theme_few() +
+  geom_bar() +
+  theme_few()+
   labs(x = "Month Outbreak Started", y = "Number of Outbreaks", 
        title = "Community Covid-19 Outbreaks by Month")
   
