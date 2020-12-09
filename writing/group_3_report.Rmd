@@ -1,7 +1,7 @@
 ---
 title: "Group 3 Final Project"
 author: "Natalie Collins, Peter Kessinger, MacKenzie Hennes, & Audrey Dickinson"
-date: "11/16/2020"
+date: "12/16/2020"
 output:
   flexdashboard::flex_dashboard: default
 ---
@@ -33,7 +33,10 @@ outbreak_list <- outbreak_list %>%
 Column {.sidebar data-width=250}
 -------------------------------------
 ### Larimer County Outbreaks
-This is where the text box will go that will describe out data.
+
+Use this tab to identify covid-19 outbreaks in Larimer County. An active outbreak is defined as two or more cases within a facility or a workplace. The identification of outbreaks and the subsequent contact tracing is an important measure in limiting the spread of covid-19 in our communities. 
+
+Filter by status, type, or date to explore outbreaks in our community. 
 
 ```{r}
 Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
