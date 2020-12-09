@@ -89,6 +89,8 @@ Column {data-width=400, .tabset}
 -------------------------------------
   
 ### Covid-19 Outbreaks by Month
+
+
 ```{r}
 outbreak_dates <- outbreak_list %>% 
   mutate(Date = mdy(Date)) %>%  
@@ -106,12 +108,6 @@ outbreak_graph <- outbreak_dates %>%
 outbreak_graph
 ```
 
-### Outbreak Gauge
-
-
-```{r}
-
-```
 
 ### Outbreak Barplot
 
