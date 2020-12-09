@@ -118,7 +118,9 @@ outbreak_graph
 ### Outbreak Barplot
 
 ```{r}
-
+plot_ly(Larimer_shared1, x = ~Type, y = ~Cases, color = ~Status) %>%
+  group_by(Type) %>% 
+  add_bars()
 ```
 
 
