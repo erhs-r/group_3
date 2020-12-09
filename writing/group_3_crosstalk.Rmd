@@ -49,11 +49,9 @@ Row {data-height=350, data-width=300, .tabset}
 ### Industry type and staff confirmed cases
 
 ```{r}
-plot_ly(
-  data = Larimer_shared2,
-  domain = list(x = c(0,66), y = c(0, 66)),
+Larimer_shared2 %>% 
+  plot_ly(
   value = ~ Cases,
-  color = ~ Status,
   type = "indicator",
   mode = "gauge+number")
 ```
@@ -91,6 +89,7 @@ outbreak_graph <- outbreak_dates %>%
 
 outbreak_graph
 ```
+
 
 
 
