@@ -33,7 +33,7 @@ outbreak_list <- outbreak_list %>%
 Column {.sidebar data-width=250}
 -------------------------------------
 ### Larimer County Outbreaks
-This is where the text box will go that will describe out data.
+This is where the text box will go that will describe our data.
 
 ```{r}
 Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
@@ -44,6 +44,8 @@ filter_select("Type", "Choose Industry:", Larimer_shared1, ~Type)
 
 ```
 
+
+can it go here?
 
 Row {data-height=600}
 -------------------------------------
