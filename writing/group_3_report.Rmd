@@ -6,10 +6,6 @@ output:
   flexdashboard::flex_dashboard: default
 ---
 
- Column {data-width=600}
--------------------------------------
-  
-### Larimer County COVID-19 Outbreaks 
   
 ```{r}
 library(tidyverse)
@@ -31,9 +27,32 @@ outbreak_list <- outbreak_list %>%
   mutate(Staff.Cases.Confirmed = ifelse(!is.na(Staff.Cases.Confirmed), Staff.Cases.Confirmed, 0)) %>% 
   rename(Location = Facility, Date = Date.Outbreak.Determined,
          Cases = Staff.Cases.Confirmed)
-
-datatable(outbreak_list, colnames = c("Location", "Status", "Company Type", "Start Outbreak Date"), extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
 ```
+
+
+Column {.sidebar data-width=250}
+-------------------------------------
+### Larimer County Outbreaks
+This is where the text box will go that will describe out data.
+
+```{r}
+Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
+Larimer_shared2 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
+
+filter_select("Type", "Choose Industry:", Larimer_shared1, ~Type)
+
+
+```
+
+
+Row {data-height=600}
+-------------------------------------
+### Datatable
+
+```{r}
+datatable(Larimer_shared1, extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
+```
+
 
 ### Confirmed Cases
 
@@ -58,21 +77,6 @@ death_data <- death_data %>%
 valueBox(death_data$n ,caption = "Confirmed Deaths", icon = "fa-medkit")
 
 ```
-
-Column {.sidebar data-width=250}
--------------------------------------
-### Larimer County Outbreaks
-This is where the text box will go that will describe out data.
-
-```{r}
-Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
-Larimer_shared2 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
-
-filter_select("Type", "Choose Industry:", Larimer_shared1, ~Type)
-
-
-```
-
 
 Column {data-width=400, .tabset}
 -------------------------------------
