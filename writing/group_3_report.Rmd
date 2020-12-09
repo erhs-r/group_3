@@ -33,15 +33,10 @@ outbreak_list <- outbreak_list %>%
 Column {.sidebar data-width=250}
 -------------------------------------
 ### Larimer County Outbreaks
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 Use this tab to identify covid-19 outbreaks in Larimer County. An active outbreak is defined as two or more cases within a facility or a workplace. The identification of outbreaks and the subsequent contact tracing is an important measure in limiting the spread of covid-19 in our communities. 
 
 Filter by status, type, or date to explore outbreaks in our community. 
-
-=======
->>>>>>> dc3788176cf7a81dc824f6be3f38343b32e5db43
 
 ```{r}
 Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
