@@ -34,9 +34,17 @@ Column {.sidebar data-width=250}
 -------------------------------------
 ### Larimer County Outbreaks
 
-Use this tab to identify covid-19 outbreaks in Larimer County. An active outbreak is defined as two or more cases within a facility or a workplace. The identification of outbreaks and the subsequent contact tracing is an important measure in limiting the spread of covid-19 in our communities. 
+Use this tab to identify Covid-19 outbreaks in Larimer County. The data is sourced from the Larimer County Department of Health and Environment.
+
+An active outbreak is defined as two or more cases within a facility or a workplace. The identification of outbreaks and the subsequent contact tracing is an important measure in limiting the spread of Covid-19 in our communities. 
+
+The outbreak graph by month is static and will not reflect changes by industry. The outbreak barplot however will reflect the changes based on the selected industry. To switch between the two views, use the tabs at the top.
+
+The value boxes in the bottom middle reflect the number of confirmed cases and deaths in Larimer County. We chose not to include those identified as probable cases.
 
 Filter by status, type, or date to explore outbreaks in our community. 
+
+Use the below drop down menu to limit outbreaks by industry.
 
 ```{r}
 Larimer_shared1 <- SharedData$new(outbreak_list, ~Type, group = "Choose Industry")
@@ -49,7 +57,7 @@ filter_select("Type", "Choose Industry:", Larimer_shared1, ~Type)
 
 Row {data-height=600}
 -------------------------------------
-### Datatable
+### Outbreak Table
 
 ```{r}
 datatable(Larimer_shared1, extensions = "Scroller", style="bootstrap", class="compact", width="100%", options=list(deferRender=TRUE, scrollY=300, scroller=TRUE))
@@ -101,8 +109,6 @@ outbreak_graph <- outbreak_dates %>%
 
 outbreak_graph
 ```
-
-The plot shows  outbreaks among Larimer county businesses by each month. It is a static graph and does not change when a different industry is selected in the sidebar. 
 
 ### Outbreak Barplot
 
